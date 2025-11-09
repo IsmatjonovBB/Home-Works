@@ -237,22 +237,49 @@ namespace Home_Works
             Console.WriteLine(original * original + reserve * reserve);*/
 
             // 22
-            Console.Write("Адади n-ро ворид кунед: ");
+            /*Console.Write("Адади n-ро ворид кунед: ");
             int n = int.Parse(Console.ReadLine());
             int sum = 0;
-            int k = 0;
-            for (int i = 1; i <= n; i++)
+            for (int i = 2; i <= n; i++)
             {
-                for (int j = 1; j <= i; j++)
+                bool isPrime = true;
+                for (int j = 2; j * j <= i; j++)
                 {
-                    if (i % j == 0 && i % 1 == 0)
+                    if (i % j == 0)
                     {
-                        k = j;
+                        isPrime = false;
+                        break;
                     }
                 }
-                sum += k;
+                if (isPrime)
+                {
+                    sum += i;
+                }
             }
-            Console.WriteLine(sum);
+            Console.WriteLine(sum);*/
+
+            // 24
+            /*Console.Write("Адади n-ро ворид кунед: ");
+            int n = int.Parse(Console.ReadLine());
+            int sign = -1;
+            for (int i = 1; i <= n; i++)
+            {
+                sign *= -1;
+                Console.WriteLine(i * sign);
+            }*/
+
+            // 25
+            /*Console.Write("Адади n-ро ворид кунед: ");
+            int n = int.Parse(Console.ReadLine());
+            int count = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    count++;
+                }
+            }
+            Console.WriteLine(count);*/
         }
     }
 }
