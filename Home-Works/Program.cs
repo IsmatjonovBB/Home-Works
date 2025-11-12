@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Services;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace Home_Works
 {
@@ -280,6 +283,74 @@ namespace Home_Works
                 }
             }
             Console.WriteLine(count);*/
+
+            /*int[,] kara = new int[9, 9];
+            for (int i = 1; i <= 9; i++)
+            {
+                for (int j = 1; j <= 9; j++)
+                {
+                    kara[i, j] = i * j;
+                    Console.Write(kara[i, j] + " ");
+                }
+                Console.WriteLine();
+            }*/
+
+            /*int[,] chess = new int[9, 9];
+            Console.Write("X: ");
+            int x = int.Parse(Console.ReadLine());
+            Console.Write("Y: ");
+            int y = int.Parse(Console.ReadLine());
+            int horse = chess[x, y];
+
+            for (int i = 1; i <= 8; i++)
+            {
+                for (int j = 1; j <= 8; j++)
+                {
+                    if ((i == x + 2 && j == y + 1) || (i == x + 2 && j == y - 1) ||
+                        (i == x - 2 && j == y + 1) || (i == x - 2 && j == y - 1) ||
+                        (i == x + 1 && j == y + 2) || (i == x + 1 && j == y - 2) ||
+                        (i == x - 1 && j == y + 2) || (i == x - 1 && j == y - 2))
+                    {
+                        Console.WriteLine($"Рафта метавонад ба: ({i}, {j})");
+                    }
+                }
+            }*/
+
+            Console.Write("Column: ");
+            int c = int.Parse(Console.ReadLine());
+            Console.Write("Row: ");
+            int r = int.Parse(Console.ReadLine());
+
+            int[,] arr = new int[c, r];
+
+            Random random = new Random();
+
+            for (int i = 0; i < c; i++)
+            {
+                for (int j = 0; j < r; j++)
+                {
+                    arr[i, j] = random.Next(1, 10);
+                    Console.Write(arr[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("----------");
+
+            bool isEven = false;
+
+            for (int i = 0; i < c; i++)
+            {
+                for (int j = 0; j < r; j++)
+                {
+                    if (arr[i, j] % 2 == 0)
+                    {
+                        isEven = true;
+                        break;
+                    }
+                }
+                if (isEven == false) Console.WriteLine("Хамаи элементхои сатри " + i + " ток аст");
+            }
         }
     }
 }
